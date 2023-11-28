@@ -12,7 +12,12 @@ key = "secret123"
 
 # define url/endpoint
 @app.get('/')
+def handler():
+    return {'message': 'voila'}
+
+@app.get('/secret')
 def handler(request: Request):
+    # retrieve headers content from request
     headers = request.headers
 
     #retrieve User-Agent key in headers
