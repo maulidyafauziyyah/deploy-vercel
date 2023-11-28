@@ -1,11 +1,11 @@
 from fastapi import FastAPI, HTTPException, Request
-import pandas as pd
+# import pandas as pd
 
 # panggil class FastAPI
 app = FastAPI()
 
 # read file csv
-data = pd.read_csv('data.csv')
+# data = pd.read_csv('data.csv')
 
 # key untuk akses endpoint
 key = "secret123"
@@ -39,10 +39,10 @@ def handler(request: Request):
                 'agent': agent
                 }
 
-# merubah data csv menjadi dict/json
-@app.get('/data')
-def handler():
-    return data.to_dict(orient='records') # orientnya udah pasti records
+# # merubah data csv menjadi dict/json
+# @app.get('/data')
+# def handler():
+#     return data.to_dict(orient='records') # orientnya udah pasti records
 
 @app.get('/home/{user}')
 def handler(user):
